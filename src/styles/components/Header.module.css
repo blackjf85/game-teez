@@ -1,0 +1,110 @@
+@import url('../global.module.css');
+
+/* Header.module.css */
+
+.header {
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo__image {
+	max-width: 15em;
+	height: auto;
+}
+
+.hamburger {
+	display: flex;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.hamburger__image {
+	width: 45px;
+	height: auto;
+}
+
+.hamburger__svg .hamburger__path {
+	fill: var(--color-text); /* Set the initial color of the SVG paths */
+}
+
+.hamburger:hover .hamburger__svg .hamburger__path {
+	fill: var(--color-action); /* Change the SVG paths color on hover */
+}
+
+.navigation {
+	display: none;
+}
+
+.navigation__list {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navigation__item {
+	margin: 0.5rem 0;
+}
+
+.navigation__link {
+	font-size: var(--font-size-small);
+	color: var(--color-text);
+	text-decoration: none;
+	font-family: var(--font-heading);
+}
+
+.navigation__link:hover {
+	color: var(--color-heading);
+}
+
+@media (min-width: 576px) {
+	.header {
+		justify-content: space-between;
+	}
+
+	.logo {
+		flex: 1;
+		margin-right: 1rem;
+	}
+
+	.logo__image {
+		max-width: none;
+		width: 200px;
+		height: auto;
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.navigation {
+		display: block;
+	}
+
+	.navigation__list {
+		display: flex;
+		flex-direction: row;
+		margin-left: auto;
+	}
+
+	.navigation__item {
+		margin: 0 0.5rem;
+	}
+
+	.navigation__link {
+		font-size: var(--font-size-large);
+	}
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+	/* Colors */
+	--color-background: #1e072b;
+	--color-text: #c2e3e0;
+	--color-heading: #f27944;
+	--color-action: #ca8961;
+	--color-accent: #221639;
+	/* Font Sizes */
+	--font-size-small: 0.875rem; /* 14px */
+	--font-size-medium: 1rem; /* 16px */
+	--font-size-large: 1.25rem; /* 20px */
+	--font-size-extra-large: 1.5rem; /* 24px */
+	/* Fonts */
+	--font-heading: 'Press Start 2P', sans-serif;
+	--font-body: 'Bebas Neue', sans-serif;
+}
