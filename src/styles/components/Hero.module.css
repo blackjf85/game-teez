@@ -2,7 +2,7 @@
 
 .hero {
 	position: relative;
-	min-height: 100vh;
+	min-height: calc(100vh - 6rem); /* Subtract header and footer height */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,8 +31,11 @@
 }
 
 .hero__content {
+	position: relative;
 	max-width: 700px;
 	padding: 1rem;
+	margin-top: 3rem; /* Half of header and footer height */
+	margin-bottom: 3rem; /* Half of header and footer height */
 }
 
 .hero__heading {
