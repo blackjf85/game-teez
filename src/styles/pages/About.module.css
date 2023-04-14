@@ -1,12 +1,8 @@
 @import url('../global.module.css');
 
-@import url('../global.module.css');
-
-@import url('../global.module.css');
-
 .about {
 	position: relative;
-	min-height: 100vh;
+	min-height: calc(100vh - 100px); /* Subtract header and footer height */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,6 +13,8 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	padding-top: 50px; /* Half of header and footer height */
+	padding-bottom: 50px; /* Half of header and footer height */
 }
 
 .about--webp::before {
@@ -43,7 +41,6 @@
 	border: 2px solid var(--color-heading);
 	border-radius: 10px;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-	margin-top: 2rem;
 	z-index: 1;
 }
 
