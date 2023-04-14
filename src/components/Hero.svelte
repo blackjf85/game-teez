@@ -1,14 +1,27 @@
 <script>
+	import { onMount } from 'svelte';
 	import styles from '../styles/components/Hero.module.css';
-	import BackgroundPng from '../lib/images/hero_image.png';
-	import BackgroundWebp from '../lib/images/hero_image.webp';
+	let hero;
+
+	async function checkWebpSupport() {
+		if (!self.createImageBitmap) return false;
+
+		const webpData = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
+		const blob = await fetch(webpData).then((r) => r.blob());
+		return createImageBitmap(blob).then(
+			() => true,
+			() => false
+		);
+	}
+
+	onMount(async () => {
+		if (await checkWebpSupport()) {
+			hero.classList.add(styles['hero--webp']);
+		}
+	});
 </script>
 
-<div class={styles.hero}>
-	<picture>
-		<source srcset={BackgroundWebp} type="image/webp" />
-		<img src={BackgroundPng} alt="Hero background" class={styles.hero__img} />
-	</picture>
+<div class={`${styles.hero}`} bind:this={hero}>
 	<div class={styles.hero__content}>
 		<h1 class={styles.hero__heading} aria-label="GameTeez">
 			Game<span class={styles.hero__headingAccent}>Teez</span>
